@@ -54,7 +54,7 @@ function Home() {
   };
 
   return (
-    <div className="container-fluid home-container" id="home">
+    <div className="container-fluid home-container mx-30" id="home " >
       <div className="theme-btn" onClick={handleTheme}>
         {theme === "light" ? (
           <BsFillMoonStarsFill size={30} />
@@ -63,7 +63,7 @@ function Home() {
         )}
       </div>
 
-      <div className="container home-content">
+      <div className="mx-40">
         <motion.div
           initial={fadeRightVariants.initial}
           animate={fadeRightVariants.animate}

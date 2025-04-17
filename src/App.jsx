@@ -11,6 +11,7 @@ import MobileNav from "./components/MobileNav/MobileNav.jsx";
 import { useState, useEffect } from "react";
 
 import loading from "../public/Animation.gif";
+import Home from "./pages/Home/Home.jsx";
 
 function App() {
   const [theme] = useTheme();
@@ -43,9 +44,9 @@ function App() {
 
   return (
     <div className={`${theme === "dark" ? "bg-lime-800 text-white" : "bg-white text-black"}`}>
-      <MobileNav />
       <Layout />
       <div className="container mx-auto px-4">
+        <Home/>
         <About />
         <Education />
         <Techstack />
