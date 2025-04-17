@@ -53,7 +53,7 @@ function App() {
   return (
     <div
       className={`min-h-screen flex flex-col ${
-        theme === "dark" ? "bg-lime-800 text-white" : "bg-white text-black"
+        theme === "dark" ? "bg-gray-800 text-blue-300" : "bg-white text-black"
       }`}
     >
       {/* Container: layout + content + footer */}
