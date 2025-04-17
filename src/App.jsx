@@ -64,7 +64,7 @@ function App() {
         </div>
 
         {/* Content in between */}
-        <div className="flex-grow p-4 space-y-16">
+        <div className="flex-grow p-4 space-y-16 gap-10 flex flex-col">
           <Home />
           <About />
           <Education />
@@ -75,7 +75,7 @@ function App() {
         </div>
 
         {/* Footer at the bottom */}
-        <footer className="bg-gray-200 dark:bg-gray-700 text-center py-4">
+        <footer className="bg-gray-200  text-center py-4">
           <marquee width="60%" direction="right">
             <h4>Made With 😍 Ayan Biswas © 2025</h4>
           </marquee>
