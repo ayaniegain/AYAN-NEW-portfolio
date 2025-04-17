@@ -43,7 +43,7 @@ function Menus() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 h-screen hidden bg-gray-900/95 backdrop-blur-sm shadow-xl md:flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800"
+      className=" z-100 fixed  top-0 left-0 h-screen hidden bg-gray-900/95 backdrop-blur-sm shadow-xl md:flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800"
       variants={sidebarVariants}
       initial="expanded"
       animate={toggle ? "collapsed" : "expanded"}
@@ -70,7 +70,7 @@ function Menus() {
       {!toggle ? (
         <>
           <motion.div
-            className="mt-12 h-[150px] w-[150px] rounded-full overflow-hidden shadow-[3px_3px_10px_rgba(0,0,0,1)] bg-white transition-transform duration-1000 hover:-translate-x-[1px] hover:rotate-y-180"
+            className="mt-12 h-[150px] w-[150px] rounded-full  overflow-hidden shadow-[3px_3px_10px_rgba(0,0,0,1)] bg-white transition-transform duration-1000 hover:-translate-x-[1px] hover:rotate-y-180"
             initial={zoomVariants.initial}
             animate={zoomVariants.animate}
             transition={zoomVariants.transition}
@@ -82,7 +82,7 @@ function Menus() {
             />
           </motion.div>
 
-          <div className="flex flex-col items-center gap-3 mt-10 w-full px-6">
+          <div className="flex flex-col items-center gap-3 mt-12 px-6">
             {[
               { to: "home", icon: <FcHome size={24} />, text: "Home", delay: 0.1 },
               { to: "about", icon: <FcAbout size={24} />, text: "About", delay: 0.2 },
