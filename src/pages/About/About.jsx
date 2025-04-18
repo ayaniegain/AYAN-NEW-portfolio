@@ -28,12 +28,12 @@ const About = () => {
 
   return (
     <motion.div
-      className="mx-auto my-12 px-4 sm:px-8 min-h-[600px] flex items-center justify-center"
+      className="mx-40 my-12 px-4 sm:px-8 min-h-[600px] flex items-center justify-center"
       initial={boxVariants.initial}
       animate={boxVariants.animate}
       transition={boxVariants.transition}
     >
-      <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8 md:p-12 w-full max-w-7xl">
+      <div className="flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8 md:p-20 w-full max-w-7xl">
         <div className="md:w-1/2 p-6 md:p-8">
           <div className="w-full h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
             <img

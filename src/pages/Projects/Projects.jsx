@@ -41,7 +41,7 @@ const Projects = () => {
 
   return (
     <section className="mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center" id="projects">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-teal-600 mb-8 uppercase">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center te</div>xt-teal-600 mb-8 uppercase">
         Top Recent Projects
       </h2>
       <hr className="w-48 sm:w-64 lg:w-96 mx-auto mb-10 border-2 border-teal-600" />
@@ -50,7 +50,7 @@ const Projects = () => {
       </p>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-7xl mx-auto mt-16"
+        className="grid  grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-10 lg:gap-12 max-w-7xl mx-auto mt-8 sm:mt-16 px-2 xs:px-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

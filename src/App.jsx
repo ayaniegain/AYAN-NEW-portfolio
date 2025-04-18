@@ -64,7 +64,7 @@ function App() {
         </div>
 
         {/* Content in between */}
-        <div className="flex-grow p-4 space-y-16 gap-10 flex flex-col">
+        <div className=" p-4 space-y-16 gap-10 flex flex-col">
           <Home />
           <About />
           <Education />
