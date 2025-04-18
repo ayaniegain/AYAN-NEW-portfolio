@@ -45,7 +45,7 @@ function Home() {
       />
       <div className="flex flex-col gap-10 relative w-full max-w-4xl z-10">
         <div
-          className="fixed right-4 md:right-6 top-4 md:top-6 flex items-center justify-center w-12 h-12 bg-[#1e1e1e] rounded-lg cursor-pointer shadow-lg hover:bg-[#2e2e3e] transition-colors duration-300 z-50"
+          className="fixed right-4 md:right-6 top-11 md:top-8 flex items-center justify-center w-12 h-12 bg-[#1e1e1e] rounded-lg cursor-pointer shadow-lg hover:bg-[#2e2e3e] transition-colors duration-300 z-50"
           onClick={handleTheme}
         >
           {theme === "light" ? (

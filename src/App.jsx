@@ -83,7 +83,11 @@ function App() {
       </div>
 
       {/* Scroll to Top */}
-      <ScrollToTop smooth color="#6f00ff" />
+      <ScrollToTop 
+        smooth 
+        color="#6f00ff" 
+        className="flex items-center justify-center"
+      />
     </div>
   );
 }

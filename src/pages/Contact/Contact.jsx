@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { motion } from "framer-motion";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import contact from "../../assets/img/contact.jpg";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -14,101 +15,130 @@ const Contact = () => {
     e.preventDefault();
     try {
       if (!name || !email || !msg) {
-        toast.error("Please Provide all fields");
+        toast.error("Please fill in all fields");
       } else {
-        toast.success("Your Message Sent Successfully");
+        toast.success("Message sent successfully");
         setName("");
         setEmail("");
         setMsg("");
       }
     } catch (error) {
-      console.log("error", error);
+      console.error("Submission error:", error);
     }
   };
 
   const lightSpeedVariants = {
-    initial: { x: -100, skewX: 20, opacity: 0 },
-    animate: { x: 0, skewX: 0, opacity: 1 },
-    transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.9] },
+    initial: { x: -50, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    transition: { duration: 0.5, ease: "easeOut" },
   };
 
   return (
-    <div
-      className="w-full min-h-[500px] flex justify-center items-center px-4 py-8 bg-gray-50"
+    <section
+      className="w-full min-h-screen flex items-center justify-center py-12 px-4 bg-gradient-to-br from-gray-100 to-gray-200"
       id="contact"
     >
-       <ToastContainer />
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-w-5xl w-full max-h-[600px]">
+      <ToastContainer position="top-right" autoClose={3000} />
+      <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
         {/* Image Section */}
-        <div className="md:w-1/2 flex justify-center items-center bg-gray-100 p-4">
-          <motion.img
+        <motion.div
+          className="lg:w-1/2 flex items-center justify-center p-8 bg-gray-50"
+          initial={lightSpeedVariants.initial}
+          animate={lightSpeedVariants.animate}
+          transition={lightSpeedVariants.transition}
+        >
+          <img
             src={contact}
-            alt="contact"
-            className="w-[250px] h-[250px] object-cover rounded-xl shadow-md"
-            initial={lightSpeedVariants.initial}
-            animate={lightSpeedVariants.animate}
-            transition={lightSpeedVariants.transition}
+            alt="Contact illustration"
+            className="w-full max-w-sm h-auto rounded-xl shadow-md object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* Form Section */}
-        <div className="md:w-1/2 p-8 flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center mb-6 gap-5">
-            <h6 className="text-xl font-semibold text-gray-800">Contact With</h6>
-            <a href="https://www.linkedin.com/in/ayangx/">
-              <BsLinkedin className="text-blue-600 hover:text-blue-800" size={28} />
+        <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-6">
+            Get in Touch
+          </h2>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-8">
+            <a
+              href="https://www.linkedin.com/in/ayangx/"
+              aria-label="LinkedIn"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              <BsLinkedin size={28} />
             </a>
-            <a href="https://github.com/ayaniegain">
-              <BsGithub className="text-blue-600 hover:text-blue-800" size={28} />
+            <a
+              href="https://github.com/ayaniegain"
+              aria-label="GitHub"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              <BsGithub size={28} />
             </a>
-            <a href="mailto:ayaniegain@gmail.com">
-              <MdEmail className="text-blue-600 hover:text-blue-800" size={32} />
+            <a
+              href="mailto:ayaniegain@gmail.com"
+              aria-label="Email"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              <MdEmail size={32} />
             </a>
           </div>
 
-          <div className="flex items-center my-4 w-full max-w-lg">
-            <div className="h-px w-full bg-gray-300"></div>
-            <span className="mx-4 text-sm font-semibold text-gray-500">OR</span>
-            <div className="h-px w-full bg-gray-300"></div>
+          {/* Divider */}
+          <div className="flex items-center my-6">
+            <div className="flex-grow h-px bg-gray-200"></div>
+            <span className="mx-4 text-sm font-medium text-gray-500">OR</span>
+            <div className="flex-grow h-px bg-gray-200"></div>
           </div>
 
-          <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your Name"
-              className="w-full max-w-lg p-3 border border-gray-200 rounded-lg mb-4 text-teal-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 bg-gray-50 shadow-sm"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter Your Email Address"
-              className="w-full max-w-lg p-3 border border-gray-200 rounded-lg mb-4 text-teal-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 bg-gray-50 shadow-sm"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <textarea
-              name="msg"
-              placeholder="Write your message"
-              className="w-full max-w-lg p-3 border border-gray-200 rounded-lg mb-4 text-teal-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 h-28 resize-none bg-gray-50 shadow-sm"
-              value={msg}
-              onChange={(e) => setMsg(e.target.value)}
-              required
-            />
+          {/* Contact Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-gray-50 text-gray-700 placeholder-gray-400"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                aria-label="Name"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-gray-50 text-gray-700 placeholder-gray-400"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-label="Email"
+              />
+            </div>
+            <div>
+              <textarea
+                name="msg"
+                placeholder="Your Message"
+                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all bg-gray-50 text-gray-700 placeholder-gray-400 h-32 resize-none"
+                value={msg}
+                onChange={(e) => setMsg(e.target.value)}
+                required
+                aria-label="Message"
+              />
+            </div>
             <button
               type="submit"
-              className="w-full max-w-lg bg-teal-600 text-white px-4 py-3 rounded-lg hover:bg-teal-700 transition-colors duration-300 font-medium shadow-md hover:shadow-lg"
+              className="w-full py-3 px-6 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-semibold shadow-md hover:shadow-lg"
             >
-              SEND MESSAGE
+              Send Message
             </button>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

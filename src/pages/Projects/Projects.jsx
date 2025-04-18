@@ -10,8 +10,10 @@ import project8 from "../../assets/project-img/8_mytube clone.png";
 import project9 from "../../assets/project-img/9_youtube_analycis.png";
 import project10 from "../../assets/project-img/10_student_database.png";
 import { motion } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 const Projects = () => {
+  const [theme] = useTheme();
   // Container animation for staggering children
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,13 +43,15 @@ const Projects = () => {
 
   return (
     <section className="mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center" id="projects">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center te</div>xt-teal-600 mb-8 uppercase">
+      <h2 className="text-2xl  sm:text-3xl lg:text-4xl font-bold text-center te</div>xt-teal-600 mb-8 uppercase">
         Top Recent Projects
       </h2>
       <hr className="w-48 sm:w-64 lg:w-96 mx-auto mb-10 border-2 border-teal-600" />
-      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-16 font-sans text-sm sm:text-base">
+    
+      <p className={`text-center ${theme === "dark" ? "text-white" : "text-gray-600"} max-w-3xl mx-auto mb-16 font-sans text-sm sm:text-base`}>
         Built multiple full-stack and frontend applications including a YouTube Clone, Task Manager, Admin Dashboard, E-commerce Site, Figma-to-React Converter, Games, Movie App, and Blog App. Used technologies like React.js, Redux, Node.js, MongoDB, and Socket.IO. Implemented features like real-time updates, user authentication, and API integration to create responsive and interactive user experiences.
       </p>
+
 
       <motion.div
         className="grid  grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-6 sm:gap-10 lg:gap-12 max-w-7xl mx-auto mt-8 sm:mt-16 px-2 xs:px-4"
@@ -82,10 +86,10 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Search and explore movies with ease</p>
               <a
                 href="https://movie-application-search.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className=" inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
-              </a>
+              </a> 
             </div>
           </div>
         </motion.div>
@@ -116,7 +120,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Organize notes with real-time syncing</p>
               <a
                 href="https://notetakingappreact.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -150,7 +154,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">A responsive resort booking platform</p>
               <a
                 href="https://resortvalley.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -184,7 +188,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Shop online with ease and style</p>
               <a
                 href="https://elitemartsd.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -194,7 +198,7 @@ const Projects = () => {
 
         {/* Project Card 5 */}
         <motion.div variants={cardVariants} className="flex justify-center">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-200 hover:shadow-2xl transition-all duration-1000 max-w-sm w-full m-4 sm:m-6">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-200 hover:shadow-2xl transition-all  duration-1000 max-w-sm w-full  m-4 sm:m-6">
             <div className="relative flex justify-center">
               <span className="absolute -top-5 left-4 bg-orange-400 text-black text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-full">
                 Frontend
@@ -218,7 +222,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Enhance your browsing experience</p>
               <a
                 href="https://ui-dark-there.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -252,7 +256,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Figma to React converted store UI</p>
               <a
                 href="https://task-project-p.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -286,7 +290,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Create and share your blog posts</p>
               <a
                 href="https://mern-blog-me.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -320,7 +324,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Stream videos like on YouTube</p>
               <a
                 href="https://bright-kleicha-8766cc.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -354,7 +358,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Analyze YouTube data live</p>
               <a
                 href="https://tubemade-st.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>
@@ -388,7 +392,7 @@ const Projects = () => {
               <p className="text-xs sm:text-sm text-gray-600 mb-4">Manage student data efficiently</p>
               <a
                 href="https://alumenai.netlify.app/"
-                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-12 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
+                className="inline-block bg-teal-600 text-white font-medium px-8 py-3 rounded-full uppercase w-40 h-10 leading-9 mx-auto hover:bg-white hover:text-teal-600 hover:border-2 hover:border-teal-600 hover:shadow-2xl transition-all duration-500"
               >
                 View
               </a>

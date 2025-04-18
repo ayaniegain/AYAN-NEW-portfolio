@@ -43,7 +43,7 @@ function Menus() {
 
   return (
     <motion.div
-      className=" z-100 fixed  top-0 left-0 h-screen hidden bg-gray-900/95 backdrop-blur-sm shadow-xl md:flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800"
+      className="z-100 fixed top-0 left-0 h-screen hidden bg-gray-900/95 backdrop-blur-sm shadow-xl md:flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800"
       variants={sidebarVariants}
       initial="expanded"
       animate={toggle ? "collapsed" : "expanded"}
